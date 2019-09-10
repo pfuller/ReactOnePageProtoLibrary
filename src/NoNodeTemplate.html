@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"
+      integrity="sha384-XATuiQivzdT/UXV8dT/x9rTiSt0pfRdSkUqvWERDyOV92ulpJBHfDpRVXDU0+CFl"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script
+      src="https://unpkg.com/react@16.9.0/umd/react.development.js"
+      integrity="sha384-Y4yTC9ZyKH1jhJ27CA+vfVwmFfxNg+aT1+mwSE8cCqbQJ+NLVbCPQ7IB2OzJ9z/R"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <!-- <script
+      src="https://unpkg.com/react-bootstrap@1.0.0-beta.12/dist/react-bootstrap.min.js"
+      integrity="sha384-a333XimkwfLggBqSBalCHG1ioZAlKgkLsS07EWgSKBdChlvc5zzrTMlmUUGLDexl"
+      crossorigin="anonymous"
+    ></script> -->
+
+    <!-- change this to a cdn -->
+    <script src="http://localhost:3000/OnePageProto.js"
+    crossorigin></script>
+
+    <!-- Add hook to App Here -->
+    <script type="text/babel">
+      ReactDOM.render(<AlertTitle />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
