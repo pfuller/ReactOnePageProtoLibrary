@@ -97,28 +97,20 @@ const EditModalRows = props => {
       <form>
         <div className="form-row">
           {props.tableDescription.headings.map(headingText => {
-            const inputName = props.tableDescription.itemName + headingText;
-            const InputHelp =
-              props.tableDescription.itemName + headingText + "Help";
-
-            // Increment the index
             headingIndex = headingIndex + 1;
 
             return (
-              <div className="form-group col-md-12">
-                <label htmlFor={inputName}>{headingText}</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id={inputName}
-                  placeholder=""
-                  aria-describedby={InputHelp}
-                  defaultValue={firstRowData[headingIndex]}
-                />
-                <small id={InputHelp} className="form-text text-muted">
-                  Enter {headingText}
-                </small>
-              </div>
+              <EditModalRow
+                key={getHashCode(headingText)}
+                headingText={headingText}
+                inputName={
+                  props.tableDescription.itemName + headingText + "Input"
+                }
+                inputHelp={
+                  props.tableDescription.itemName + headingText + "Help"
+                }
+                defaultValue={firstRowData[headingIndex]}
+              />
             );
           })}
         </div>
@@ -126,3 +118,44 @@ const EditModalRows = props => {
     </div>
   );
 };
+
+const EditModalRow = props => (
+  <div className="form-group col-md-12">
+    <label htmlFor={props.inputName}>{props.headingText}</label>
+    <input
+      type="text"
+      className="form-control"
+      id={props.inputName}
+      placeholder=""
+      aria-describedby={props.InputHelp}
+      defaultValue={props.defaultValue}
+    />
+    <small id={props.InputHelp} className="form-text text-muted">
+      Enter {props.headingText}
+    </small>
+  </div>
+);
+
+//#region sub Functions
+
+/*
+ * Calculates a hash value from the input object, used to generate id's
+ */
+function getHashCode(obj) {
+  var hash = 0;
+
+  Object.keys(obj).forEach(fld => {
+    // key: the name of the object key
+    // index: the ordinal position of the key within the object
+    const myField = obj[fld];
+
+    for (var i = 0; i < myField.length; i++) {
+      hash = (hash << 5) - hash + myField.charCodeAt(i);
+      hash = hash & hash; // Convert to 32bit integer
+    }
+  });
+
+  return hash;
+}
+
+//#endregion
