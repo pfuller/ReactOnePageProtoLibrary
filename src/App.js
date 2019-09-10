@@ -5,8 +5,8 @@ import { AlertTitle, LinkSection, TableSection } from './OnePageProto';
 function App() {
   const pageTitle = "Products Example";
   
-  const linkRef = "https://github.com";
-  const linkText = "Github";
+  const linkRef = "https://github.com/pfuller/ReactOnePageProtoLibrary";
+  const linkText = "React One Page Proto Library on Github";
   
   const tableDescription = {
     trailer: ["Edit", "Delete"],
