@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 //#region Components
 
 /*
-* Component to display a banner across the page and update the full page title
-*/
+ * Component to display a banner across the page and update the full page title
+ */
 export const AlertTitle = props => {
   document.title = props.title;
 
@@ -19,8 +19,8 @@ export const AlertTitle = props => {
 };
 
 /*
-* Component to display a Link
-*/
+ * Component to display a Link
+ */
 export const LinkSection = props => (
   <div className="container-fluid">
     <div className="row">
@@ -38,8 +38,8 @@ export const LinkSection = props => (
 );
 
 /*
-* Customisable Table Component Container
-*/
+ * Customisable Table Component Container
+ */
 // TODO: Make Add Buttons Configurable
 export const TableSection = props => (
   <div className="card">
@@ -53,7 +53,7 @@ export const TableSection = props => (
             className="btn btn-info"
             type="button"
             data-toggle="modal"
-            data-target="#AddEntryModal"
+            data-target="#EditModal"
           >
             Add Entry
           </button>
@@ -70,32 +70,32 @@ export const TableSection = props => (
 );
 
 /*
-* Button Component that Shows a Modal and is displayed as a link
-*/
+ * Button Component that Shows a Modal and is displayed as a link
+ */
 export const ShowModalLinkButton = props => {
   const modalTarget = "#" + props.Name + "Modal";
 
   return (
     <td>
       <button
-      type="button"
-      className="btn btn-link"
-      data-toggle="modal"
-      data-target={modalTarget}
+        type="button"
+        className="btn btn-link"
+        data-toggle="modal"
+        data-target={modalTarget}
       >
-      {props.Name}
+        {props.Name}
       </button>
     </td>
-  )
-}
+  );
+};
 
 //#endregion
 
 //#region sub components
 
 /*
-* Main Table Container
-*/
+ * Main Table Container
+ */
 const CustomTable = props => (
   <div className="col-sm">
     <table className="table table-bordered table-sm table-hover"></table>
@@ -109,8 +109,8 @@ const CustomTable = props => (
 );
 
 /*
-* Table Header Section
-*/
+ * Table Header Section
+ */
 const CustomTableHeader = props => {
   const trailerSpan = props.tableDescription.trailer.length;
 
@@ -126,30 +126,34 @@ const CustomTableHeader = props => {
         <th scope="col" colSpan={trailerSpan}></th>
       </tr>
     </thead>
-  )
+  );
 };
 
 /*
-* Table Header Cell Entry
-*/
+ * Table Header Cell Entry
+ */
 const CustomTableHeaderColumn = props => {
   return <th scope="col">{props.headingText}</th>;
 };
 
 /*
-* Container for Table Rows
-*/
+ * Container for Table Rows
+ */
 const CustomTableRows = props => (
   <tbody>
     {props.tableDescription.tableData.map(tableRow => (
-      <CustomTableRow key={getHashCode(tableRow)} rowData={tableRow} trailer={props.tableDescription.trailer}/>
+      <CustomTableRow
+        key={getHashCode(tableRow)}
+        rowData={tableRow}
+        trailer={props.tableDescription.trailer}
+      />
     ))}
   </tbody>
 );
 
 /*
-* Container for individual Table row
-*/
+ * Container for individual Table row
+ */
 const CustomTableRow = props => (
   <tr>
     {props.rowData.map(entry => (
@@ -162,8 +166,8 @@ const CustomTableRow = props => (
 );
 
 /*
-* Individual Table Data Cell
-*/
+ * Individual Table Data Cell
+ */
 const CustomTableRowCell = props => {
   return <td>{props.value}</td>;
 };
@@ -173,8 +177,8 @@ const CustomTableRowCell = props => {
 //#region sub Functions
 
 /*
-* Calculates a hash value from the input object, used to generate id's
-*/
+ * Calculates a hash value from the input object, used to generate id's
+ */
 function getHashCode(obj) {
   var hash = 0;
 

@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { AlertTitle, LinkSection, TableSection } from "./OnePageProto";
+import { DeleteModal, EditModal } from "./Modals";
 
 function App() {
   const pageTitle = "Products Example";
@@ -9,6 +10,8 @@ function App() {
   const linkText = "React One Page Proto Library on Github";
 
   const tableDescription = {
+    itemName: "Product",
+    itemNamePlural: "Products",
     headings: ["Name", "Section", "Stock", "Price"],
     tableData: [
       ["Lettuce", "Fruit & Veg", "78", "0.56"],
@@ -27,6 +30,8 @@ function App() {
       <TableSection tableDescription={tableDescription} />
       <div>&nbsp;</div>
       <LinkSection linkRef={linkRef} linkText={linkText} />
+      <DeleteModal tableDescription={tableDescription} />
+      <EditModal tableDescription={tableDescription} />
     </div>
   );
 }
