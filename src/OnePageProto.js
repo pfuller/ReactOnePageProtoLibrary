@@ -55,7 +55,7 @@ export const TableSection = props => (
             data-toggle="modal"
             data-target="#EditModal"
           >
-            Add Entry
+            Add {props.tableDescription.itemName}
           </button>
         </div>
       </div>
