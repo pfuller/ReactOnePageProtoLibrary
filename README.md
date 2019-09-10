@@ -5,6 +5,10 @@ This library should be built and deployed on a CDN to provide helper methods aro
 
 ## Installation and Running:
 
-clone this respository
-npm i
-npm start
+1. Install NodeJS and a Git Client
+2. Clone this respository
+> `git clone https://github.com/pfuller/ReactOnePageProtoLibrary.git`
+3. Run the followng command to install the node modules
+> `npm i`
+4. Start the development server
+> `npm start`
